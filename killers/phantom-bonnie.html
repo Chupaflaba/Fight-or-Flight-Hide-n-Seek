@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Phantom Bonnie | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="You can&#x27;t outrun a ghost. Phantom Bonnie in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Phantom Bonnie | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="You can&#x27;t outrun a ghost. Phantom Bonnie in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">P</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Phantom Bonnie model">
+          <source src="../models/phantom-bonnie.webm" type="video/webm">
+          <source src="../models/phantom-bonnie.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Phantom Bonnie</h1>
+        <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 2 of 5" aria-label="Difficulty 2 of 5"><b>★★</b>★★★<small>Difficulty</small></span></div>
+        <p class="tagline">You can&#x27;t outrun a ghost.</p>
+        <ul class="stats"><li><span>Health</span><b>425 / Hider</b></li><li><span>Speed</span><b>500</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Phantom Bonnie night vision for 12 seconds. Able to be toggled on and off to recharge.</p></li>
+          <li><div class="an">Phantom Rush<span class="key">SHIFT</span></div><p>Dashes in a straight direction at a fast speed, attacking any player in the way.</p></li>
+          <li><div class="an">Death Decoy<span class="key">T</span></div><p>Sends a decoy in the direction Phantom Bonnie is looking, deceiving Hiders.</p></li>
+          <li><div class="an">Spectral Form<span class="key passive">Passive</span></div><p>Allows Phantom Bonnie to hover, fly, and pass through physical objects.</p></li>
+        </ul>
+        <div class="over"><p>A spectral Killer that moves freely through the physical world. Night Vision grants Phantom Bonnie enhanced vision for 12 seconds and can be toggled off to conserve its charge. Use Phantom Rush to dash forward at incredible speed, attacking any Hider caught in the way. Death Decoy sends a deceptive decoy in the direction you&#x27;re facing, confusing Hiders and creating opportunities to strike. With Spectral Form, Phantom Bonnie can hover, fly, and pass straight through physical objects.</p><p>A supernatural Killer built around deception, confusing pursuit, and unrestricted movement.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="omnidroid.html"><small>Previous</small><b>The Omnidroid</b></a><a class="next" href="phantom-chica.html"><small>Next</small><b>Phantom Chica</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

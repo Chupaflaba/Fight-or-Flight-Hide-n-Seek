@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Slenderman | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Don&#x27;t let him see you looking. Slenderman in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Slenderman | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Don&#x27;t let him see you looking. Slenderman in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">S</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Slenderman model">
+          <source src="../models/slenderman.webm" type="video/webm">
+          <source src="../models/slenderman.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Slenderman</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 4 of 5" aria-label="Difficulty 4 of 5"><b>★★★★</b>★<small>Difficulty</small></span></div>
+        <p class="tagline">Don&#x27;t let him see you looking.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>500</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Manifest<span class="key">1</span></div><p>Slenderman enters the physical world, allowing him to interact with and hunt Hiders directly.</p></li>
+          <li><div class="an">Dark Grasp<span class="key">2</span></div><p>Slenderman extends a tentacle toward a Hider. If it connects, the Hider will be pulled towards Slenderman for a short duration.</p></li>
+          <li><div class="an">Entanglement<span class="key">G</span></div><p>Slenderman releases several tentacles around himself. Hiders caught within them become ensnared, slowing their movement and restricting how far they can escape from Slenderman.</p></li>
+          <li><div class="an">The Gaze<span class="key passive">Passive</span></div><p>Slenderman has limited movement in the physical world, represented by a red meter. Once depleted, he cannot move in his physical form. Looking at Slenderman in his physical form restores a portion of this meter. Hiders who look at Slenderman when he first manifests become fixated on him, locking their camera on him and blurring their vision.</p></li>
+        </ul>
+        <div class="over"><p>A terrifying supernatural Killer who exists between the physical and spiritual worlds. Manifest allows Slenderman to enter the physical world, giving him the ability to directly interact with and hunt Hiders. Use Dark Grasp to extend a tentacle toward a Hider, pulling them toward Slenderman if it connects. Entanglement releases several tentacles around Slenderman, ensnaring nearby Hiders, slowing their movement and limiting how far they can escape. With The Gaze, Slenderman&#x27;s physical form is limited by a red movement meter that depletes as he moves and can only be restored when Hiders look at him. However, any Hider who looks at Slenderman when he first manifests becomes fixated on him, locking their camera onto him and blurring their vision.</p><p>A supernatural Killer built around fear, forced attention, cut offs, and smart positioning.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="rolling-giant.html"><small>Previous</small><b>Rolling Giant</b></a><a class="next" href="stalker.html"><small>Next</small><b>The Stalker</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

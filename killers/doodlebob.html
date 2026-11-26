@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doodlebob | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Erase reality. Draw your own rules. Doodlebob in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Doodlebob | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Erase reality. Draw your own rules. Doodlebob in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">D</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Doodlebob model">
+          <source src="../models/doodlebob.webm" type="video/webm">
+          <source src="../models/doodlebob.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Doodlebob</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 3 of 5" aria-label="Difficulty 3 of 5"><b>★★★</b>★★<small>Difficulty</small></span></div>
+        <p class="tagline">Erase reality. Draw your own rules.</p>
+        <ul class="stats"><li><span>Health</span><b>425 / Hider</b></li><li><span>Speed</span><b>575</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Eraser Rift<span class="key">T</span></div><p>Erase a hole in reality, creating a portal that DoodleBob is able to travel through for a short duration before coming back up.</p></li>
+          <li><div class="an">Sketch Sight<span class="key">R</span></div><p>Every hider is outlined by Doodlebob&#x27;s pencil. Drawback is DoodleBob will outline himself as well.</p></li>
+          <li><div class="an">Doodleball<span class="key">B</span></div><p>Throws a cartoon bowling ball that ricochets up to 3 times.</p></li>
+          <li><div class="an">Boom Sketch<span class="key">G</span></div><p>Draw an explosive bomb onto the ground that whenever hiders step on, will detonate. If a Doodleball is thrown upon this bomb, it will become an upgraded Bowling Bomb.</p></li>
+        </ul>
+        <div class="over"><p>Armed with a pencil and an imagination that defies reality, DoodleBob can use Eraser Rift to tear open portals and travel through them before reappearing elsewhere. Sketch Sight reveals every Hider&#x27;s location by outlining them with his pencil—but also reveals DoodleBob himself. His Doodleball launches a cartoon bowling ball that can ricochet up to three times, while Boom Sketch lets him draw explosive bombs that detonate when stepped on. Hit a Boom Sketch with a Doodleball to create a devastating Bowling Bomb.</p><p>A chaotic Killer built around tracking, unpredictable movement, ricochets, and creative traps.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="agatha.html"><small>Previous</small><b>Agatha</b></a><a class="next" href="hellborn.html"><small>Next</small><b>Hellborn</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

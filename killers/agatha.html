@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Agatha | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="The longer the chase, the worse it gets. Agatha in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Agatha | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="The longer the chase, the worse it gets. Agatha in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">A</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Agatha model">
+          <source src="../models/agatha.webm" type="video/webm">
+          <source src="../models/agatha.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Agatha</h1>
+        <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 1 of 5" aria-label="Difficulty 1 of 5"><b>★</b>★★★★<small>Difficulty</small></span></div>
+        <p class="tagline">The longer the chase, the worse it gets.</p>
+        <ul class="stats"><li><span>Health</span><b>425 / Hider</b></li><li><span>Speed</span><b>560</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Mind Grip<span class="key">F</span></div><p>Agatha telekinetically grabs a Hider in her line of sight, yanking them toward her.</p></li>
+          <li><div class="an">Tag You&#x27;re It<span class="key">RMB</span></div><p>Agatha charges before sprinting toward her aim, instantly downing any Hider caught in her path. If she misses everyone, she throws a tantrum.</p></li>
+          <li><div class="an">Peekaboo<span class="key">R</span></div><p>Agatha vanishes from sight, allowing her to briefly reposition before suddenly reappearing.</p></li>
+          <li><div class="an">Bloodlust<span class="key passive">Passive</span></div><p>Agatha builds Bloodlust while chasing Hiders. Each level increases her movement and attack speed, up to a maximum of 3 levels.</p></li>
+        </ul>
+        <div class="over"><p>A relentless Killer who becomes increasingly dangerous the longer she hunts. Mind Grip fuels Agatha&#x27;s growing Bloodlust, increasing her movement speed and attack speed as she chases Hiders. With Tag You&#x27;re It, Agatha charges up before violently sprinting in the direction she&#x27;s aiming, instantly downing any Hider caught in her path. If she fails to catch anyone, she&#x27;ll throw a tantrum. Use Peekaboo to vanish before the eyes of Hiders, creating a brief opportunity to reposition before suddenly reappearing. Her Bloodlust can reach up to three levels, with each level making her faster and more aggressive.</p><p>A relentless pursuit Killer built around escalating aggression, instant downs, and deceptive repositioning.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><span></span><a class="next" href="doodlebob.html"><small>Next</small><b>Doodlebob</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

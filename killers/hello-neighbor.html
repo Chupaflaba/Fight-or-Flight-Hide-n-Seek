@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hello Neighbor | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="You never know what&#x27;s waiting around the corner. Hello Neighbor in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Hello Neighbor | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="You never know what&#x27;s waiting around the corner. Hello Neighbor in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">H</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Hello Neighbor model">
+          <source src="../models/hello-neighbor.webm" type="video/webm">
+          <source src="../models/hello-neighbor.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Hello Neighbor</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 2 of 5" aria-label="Difficulty 2 of 5"><b>★★</b>★★★<small>Difficulty</small></span></div>
+        <p class="tagline">You never know what&#x27;s waiting around the corner.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>565</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Hello Neighbor night vision for 12 seconds. Able to be toggled on and off to recharge.</p></li>
+          <li><div class="an">Bear Trap<span class="key">R</span></div><p>Places a bear trap that catches Hiders. Can be broken.</p></li>
+          <li><div class="an">Security Camera<span class="key">T</span></div><p>Attaches a camera to a surface. This camera highlights Hiders that go past it and alert Hello Neighbor to their position. Can be broken.</p></li>
+          <li><div class="an">Glue Trap<span class="key">G</span></div><p>Launches a glue trap that explodes into a puddle, slowing Hiders within it.</p></li>
+        </ul>
+        <div class="over"><p>Hunt down Hiders with the help of Night Vision, granting Hello Neighbor enhanced vision for 12 seconds and allowing him to toggle it off to conserve its charge. Place Bear Traps to catch unsuspecting Hiders, or deploy Security Cameras to monitor key areas and alert you when Hiders pass by. When they try to make a getaway, use Glue Traps to create sticky puddles that slow Hiders caught within them.</p><p>A methodical Killer built around surveillance, traps, and controlling the map.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="hellborn.html"><small>Previous</small><b>Hellborn</b></a><a class="next" href="herobrine.html"><small>Next</small><b>Herobrine</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

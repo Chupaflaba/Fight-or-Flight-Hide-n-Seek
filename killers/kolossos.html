@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kolossos | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Raw velocity. Relentless pursuit. Kolossos in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Kolossos | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Raw velocity. Relentless pursuit. Kolossos in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">K</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Kolossos model">
+          <source src="../models/kolossos.webm" type="video/webm">
+          <source src="../models/kolossos.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Kolossos</h1>
+        <div class="meta"><span class="tag anomaly">Anomaly</span><span class="stars" title="Difficulty 5 of 5" aria-label="Difficulty 5 of 5"><b>★★★★★</b><small>Difficulty</small></span></div>
+        <p class="tagline">Raw velocity. Relentless pursuit.</p>
+        <ul class="stats"><li><span>Health</span><b>425 / Hider</b></li><li><span>Speed</span><b>600</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Rampage<span class="key">LMB</span></div><p>Pressing LMB fast will do a normal attack, slightly nudging you forward. If LMB is held, Kolossos will dash forward dealing increased damage.</p></li>
+          <li><div class="an">Gore Rush<span class="key">R</span></div><p>Charges forward, impaling players and carrying them along. Crashing them into a wall deals bonus damage.</p></li>
+          <li><div class="an">Rend<span class="key">F</span></div><p>Grabs a player and viciously slashes them before throwing them away.</p></li>
+          <li><div class="an">Bloodsense<span class="key">RMB</span></div><p>Detects weakened players who&#x27;re at 25 HP or below.</p></li>
+          <li><div class="an">Wallbound<span class="key passive">Passive</span></div><p>Allows Kolossos to jump off walls.</p></li>
+        </ul>
+        <div class="over"><p>A monstrous close-range Killer built around overwhelming force and relentless aggression. Rampage delivers rapid attacks or can be charged into a powerful forward dash, dealing increased damage. Gore Rush allows Kolossos to impale and carry Hiders, dealing bonus damage when they&#x27;re slammed into a wall. Rend grabs a Hider and tears into them before violently throwing them away. Bloodsense reveals weakened Hiders at 25 HP or below, allowing Kolossos to hunt down the injured. With Wallbound, Kolossos can leap off walls to pursue his prey from unexpected angles.</p><p>A devastating Killer built around explosive speed, relentless pursuit, and finishing weakened prey.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="huntsman-spider.html"><small>Previous</small><b>Huntsman Spider</b></a><a class="next" href="locust.html"><small>Next</small><b>Locust</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

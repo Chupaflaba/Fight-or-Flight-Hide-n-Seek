@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Stalker | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="The more he watches, the more dangerous he becomes. The Stalker in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="The Stalker | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="The more he watches, the more dangerous he becomes. The Stalker in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">S</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="The Stalker model">
+          <source src="../models/stalker.webm" type="video/webm">
+          <source src="../models/stalker.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>The Stalker</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 4 of 5" aria-label="Difficulty 4 of 5"><b>★★★★</b>★<small>Difficulty</small></span></div>
+        <p class="tagline">The more he watches, the more dangerous he becomes.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>460</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Obsession<span class="key">RMB</span></div><p>The Stalker grabs a Hider for 4 seconds, marking them as his obsession. His obsession is permanently highlighted through walls, but can be replaced by grabbing another Hider.</p></li>
+          <li><div class="an">Ringtone<span class="key">G</span></div><p>The Stalker calls the nearest Hider, regardless of distance. The targeted Hider emits a ringtone, revealing their location through audio while being significantly slowed until it ends.</p></li>
+          <li><div class="an">Evil Eye<span class="key">R</span></div><p>The Stalker launches an explosive projectile that damages and briefly blinds Hiders on contact. Each successful hit grants additional Stalk.</p></li>
+          <li><div class="an">Stalk<span class="key passive">Passive</span></div><p>While crouching, the Stalker observes Hiders to build his Stalk meter. Each level increases his movement speed and Evil Eye damage, up to level 5. While stalking, the round timer moves at 1/4 of its normal speed.</p></li>
+        </ul>
+        <div class="over"><p>A calculating Killer who grows stronger through observation, using fear and relentless tracking to hunt down Hiders. Obsession allows The Stalker to grab a Hider and mark them as his new obsession after holding them for 4 seconds. His obsession remains permanently highlighted through walls, allowing him to track their movements until he chooses another target. Use Ringtone to call the nearest Hider, regardless of distance, forcing them to emit a loud audio cue that reveals their location while significantly slowing them until the ringtone ends. Evil Eye launches a projectile that explodes on contact, damaging and briefly blinding Hiders caught in its blast. Every successful hit also grants additional Stalk. With Stalk, The Stalker can crouch and observe Hiders to build his meter, increasing his movement speed and Evil Eye damage with each level, up to a maximum of five. While actively stalking, the round timer progresses at just one-quarter of its normal speed.</p><p>A methodical tracking Killer built around observation, escalating power, target fixation, and relentless pursuit.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="slenderman.html"><small>Previous</small><b>Slenderman</b></a><a class="next" href="warden.html"><small>Next</small><b>Warden</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

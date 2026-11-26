@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Omnidroid | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Built to destroy. Programmed to hunt. The Omnidroid in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="The Omnidroid | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Built to destroy. Programmed to hunt. The Omnidroid in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">O</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="The Omnidroid model">
+          <source src="../models/omnidroid.webm" type="video/webm">
+          <source src="../models/omnidroid.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>The Omnidroid</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 3 of 5" aria-label="Difficulty 3 of 5"><b>★★★</b>★★<small>Difficulty</small></span></div>
+        <p class="tagline">Built to destroy. Programmed to hunt.</p>
+        <ul class="stats"><li><span>Health</span><b>875 / Hider</b></li><li><span>Speed</span><b>570</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Target Lock<span class="key">G</span></div><p>Omnidroid grabs a hider, allowing him to throw them anywhere he pleases. If thrown at another hider, it will deal damage to them on impact.</p></li>
+          <li><div class="an">Impact Slam<span class="key">SPACE</span></div><p>Omnidroid leaps high into the air before crashing down, dealing damage to all Hiders caught within the impact zone. While leaping, Omnidroid gains Super Armor, making him impervious to damage and various forms of stun.</p></li>
+          <li><div class="an">Rolling Assault<span class="key">R</span></div><p>Omnidroid transforms into a rolling ball, rapidly gaining speed. Players struck by him take damage and are launched a considerable distance.</p></li>
+        </ul>
+        <div class="over"><p>A relentless combat machine designed to overwhelm Hiders through brute force and devastating mobility. Target Lock grabs a Hider and allows Omnidroid to throw them in any direction, dealing additional damage if the victim collides with another Hider. Use Impact Slam to leap high into the air before crashing down, damaging all Hiders caught in the impact zone. While airborne, Omnidroid gains Super Armor, making him immune to damage and various forms of stun. With Rolling Assault, Omnidroid transforms into a rolling ball and rapidly accelerates, damaging and launching any Hider caught in his path.</p><p>A devastating Killer built around brute force, crowd control, mobility, and overwhelming attacks.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="obelisk.html"><small>Previous</small><b>Obelisk</b></a><a class="next" href="phantom-bonnie.html"><small>Next</small><b>Phantom Bonnie</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

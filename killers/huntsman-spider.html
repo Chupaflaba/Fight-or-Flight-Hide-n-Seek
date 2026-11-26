@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Huntsman Spider | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="You are its prey. Huntsman Spider in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Huntsman Spider | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="You are its prey. Huntsman Spider in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">H</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Huntsman Spider model">
+          <source src="../models/huntsman-spider.webm" type="video/webm">
+          <source src="../models/huntsman-spider.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Huntsman Spider</h1>
+        <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 2 of 5" aria-label="Difficulty 2 of 5"><b>★★</b>★★★<small>Difficulty</small></span></div>
+        <p class="tagline">You are its prey.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>600</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Huntsman Spider night vision for 20 seconds. Able to be toggled on and off to recharge.</p></li>
+          <li><div class="an">Web Snare<span class="key">E</span></div><p>Lays down a web that traps players who walk into it.</p></li>
+          <li><div class="an">Camo<span class="key">R</span></div><p>Huntsman Spider turns translucent and can only be seen by Hiders from a short distance away, moving at half speed while it lasts. Biting a Hider from behind in this form downs them instantly. Press R again to drop the camo.</p></li>
+          <li><div class="an">Predatory DNA<span class="key passive">Passive</span></div><p>Huntsman Spider&#x27;s night vision&#x27;s duration is longer, and their climbing speed is greatly enhanced.</p></li>
+        </ul>
+        <div class="over"><p>A relentless predator built for hunting from the shadows. Night Vision grants the Huntsman Spider enhanced vision for 20 seconds and can be toggled off to conserve its charge. Lay down Web Snares to trap unsuspecting Hiders, or slip into Camo, vanishing from Hiders until they are almost on top of it and downing anyone it bites from behind. Its Predatory DNA enhances its night vision duration and greatly increases its climbing speed.</p><p>An insidious Killer built around ambushes, traps, and superior mobility.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="herobrine.html"><small>Previous</small><b>Herobrine</b></a><a class="next" href="kolossos.html"><small>Next</small><b>Kolossos</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

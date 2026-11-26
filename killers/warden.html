@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Warden | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="You can&#x27;t hide from what can hear you. Warden in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Warden | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="You can&#x27;t hide from what can hear you. Warden in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">W</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Warden model">
+          <source src="../models/warden.webm" type="video/webm">
+          <source src="../models/warden.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Warden</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 3 of 5" aria-label="Difficulty 3 of 5"><b>★★★</b>★★<small>Difficulty</small></span></div>
+        <p class="tagline">You can&#x27;t hide from what can hear you.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>555</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Burrow<span class="key">R</span></div><p>Warden digs underground, allowing him to travel beneath the map unseen. Press R again to emerge at his current location.</p></li>
+          <li><div class="an">Sonic Boom<span class="key">SPACE</span></div><p>Warden charges and unleashes a powerful sonic blast from a distance, aimed toward the player&#x27;s crosshair.</p></li>
+          <li><div class="an">Predator&#x27;s Scent<span class="key">T</span></div><p>Warden detects the scent of nearby Hiders, highlighting any players within his detection radius.</p></li>
+          <li><div class="an">Dread Aura<span class="key passive">Passive</span></div><p>Warden radiates an aura of fear that darkens the vision of nearby Hiders.</p></li>
+          <li><div class="an">Keen Hearing<span class="key passive">Passive</span></div><p>Warden can hear Hiders from a great distance while they are walking or sprinting, highlighting them within his detection range. Hiders can avoid detection by crouching or crouch-walking.</p></li>
+        </ul>
+        <div class="over"><p>A terrifying subterranean Killer that hunts Hiders through sound, scent, and fear. Burrow allows Warden to dig underground and travel beneath the map unseen, emerging wherever he chooses. Use Sonic Boom to charge and unleash a powerful long-range sonic blast aimed toward your crosshair. Predator&#x27;s Scent detects nearby Hiders and highlights those within its range, while Dread Aura darkens the vision of Hiders who venture too close. With Keen Hearing, Warden can hear walking and sprinting Hiders from a great distance and highlight them within his detection range—but crouching or crouch-walking allows Hiders to remain undetected.</p><p>A relentless tracking Killer built around stealth, sensory detection, and controlling the map.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="stalker.html"><small>Previous</small><b>The Stalker</b></a><a class="next" href="wyst.html"><small>Next</small><b>W.Y.S.T</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

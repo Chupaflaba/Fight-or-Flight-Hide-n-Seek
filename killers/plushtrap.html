@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plushtrap | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Small, silent, and always one pounce away. Plushtrap in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Plushtrap | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Small, silent, and always one pounce away. Plushtrap in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">P</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Plushtrap model">
+          <source src="../models/plushtrap.webm" type="video/webm">
+          <source src="../models/plushtrap.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Plushtrap</h1>
+        <div class="meta"><span class="tag anomaly">Anomaly</span><span class="stars" title="Difficulty 5 of 5" aria-label="Difficulty 5 of 5"><b>★★★★★</b><small>Difficulty</small></span></div>
+        <p class="tagline">Small, silent, and always one pounce away.</p>
+        <ul class="stats"><li><span>Health</span><b>300 / Hider</b></li><li><span>Speed</span><b>300</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Plushtrap night vision for 12 seconds. Can be toggled on and off to recharge.</p></li>
+          <li><div class="an">Plush Pounce<span class="key">LMB</span></div><p>Plushtrap pounces in the direction he&#x27;s aiming, bouncing off walls to reach Hiders. The higher he is when pouncing, the more damage he deals upon landing. A successful pounce activates Hide then Seek.</p></li>
+          <li><div class="an">Back Shredder<span class="key">R</span></div><p>Plushtrap dashes forward, attaching himself to the back of any Hider hit. He attacks three times before leaping off in the direction they&#x27;re facing.</p></li>
+          <li><div class="an">Hide then Seek<span class="key passive">Passive</span></div><p>After a successful Plush Pounce, Plushtrap enters stealth for 1 second, during which he cannot attack but can move undetected. Once ready, he can press LMB to redeploy his pounce.</p></li>
+        </ul>
+        <div class="over"><p>A cunning ambush Killer that uses explosive leaps and stealth to catch Hiders off guard. Plush Pounce launches Plushtrap toward his target, allowing him to bounce off walls to reach unexpected angles. The higher he is when initiating the pounce, the more damage he deals upon landing. Successfully landing a pounce activates Hide then Seek, allowing Plushtrap to move undetected for 1 second while unable to attack before preparing another pounce. With Back Shredder, Plushtrap dashes forward and latches onto the back of any Hider he hits, attacking them three times before leaping off in the direction they&#x27;re facing.</p><p>A stealthy ambush Killer built around aerial attacks, hit-and-run tactics, and chaining pounces into surprise attacks.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="phantom-puppet.html"><small>Previous</small><b>Phantom Puppet</b></a><a class="next" href="redrawn-bend-o-tron.html"><small>Next</small><b>Redrawn Bend-O-Tron</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>

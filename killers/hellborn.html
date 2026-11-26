@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hellborn | Fight or Flight : Hide N Seek</title>
+<meta name="description" content="Let the world burn. Hellborn in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:title" content="Hellborn | Fight or Flight : Hide N Seek">
+<meta property="og:description" content="Let the world burn. Hellborn in Fight or Flight : Hide N Seek: stats and abilities.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#120f0f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../site.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="mark" href="../index.html">Fight or Flight <span>:</span> Hide N Seek</a>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <a class="crumb" href="../index.html#killers">&larr; All killers</a>
+    <article class="k">
+      <div class="stage" id="stage">
+        <span class="initial" aria-hidden="true">H</span>
+        <video id="spin" autoplay loop muted playsinline preload="auto" hidden aria-label="Hellborn model">
+          <source src="../models/hellborn.webm" type="video/webm">
+          <source src="../models/hellborn.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div>
+        <h1>Hellborn</h1>
+        <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 3 of 5" aria-label="Difficulty 3 of 5"><b>★★★</b>★★<small>Difficulty</small></span></div>
+        <p class="tagline">Let the world burn.</p>
+        <ul class="stats"><li><span>Health</span><b>575 / Hider</b></li><li><span>Speed</span><b>570</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Blazethrower<span class="key">RMB</span></div><p>Hellborn unleashes a continuous stream of flames from his mouth while moving at reduced speed. The attack has limited fuel but can be cancelled early by releasing RMB.</p></li>
+          <li><div class="an">Spark Shots<span class="key">R</span></div><p>Hellborn launches three fiery projectiles that spread apart before arcing downward and exploding on impact. Holding R instead fires a larger, faster fireball that travels straight without arcing.</p></li>
+          <li><div class="an">Supernova<span class="key">G</span></div><p>Hellborn engulfs himself in intense flames, gaining a burst of speed before unleashing a fiery explosion that damages nearby Hiders.</p></li>
+          <li><div class="an">Infectious Flames<span class="key passive">Passive</span></div><p>Hellborn&#x27;s fire-based abilities inflict Infectious Flames, causing Hiders to burn and take damage every second until they extinguish the flames.</p></li>
+        </ul>
+        <div class="over"><p>A fiery Killer that overwhelms Hiders with relentless flames and explosive attacks. Blazethrower unleashes a continuous stream of fire from Hellborn&#x27;s mouth while reducing his movement speed. The flames can only be sustained for a limited time before his fuel runs out, but the attack can be cancelled early by releasing RMB. Use Spark Shots to launch three fiery projectiles that spread apart before arcing downward, exploding into flames upon hitting a surface or Hider and damaging anything caught in the blast. Holding R instead fires a single larger, faster fireball that does not arc downward. With Supernova, Hellborn engulfs his entire body in intense flames, gaining a burst of movement speed before unleashing a devastating explosion around himself. His Infectious Flames passive causes all fire-based abilities to ignite Hiders, dealing damage every second until they manage to extinguish the flames.</p><p>A devastating area-denial Killer built around persistent burning damage, explosive attacks, and overwhelming firepower.</p></div>
+      </div>
+    </article>
+    <nav class="pager" aria-label="More killers"><a href="doodlebob.html"><small>Previous</small><b>Doodlebob</b></a><a class="next" href="hello-neighbor.html"><small>Next</small><b>Hello Neighbor</b></a></nav>
+  </main>
+  <script>
+    // Shows the spinning model once its video file exists; otherwise the big initial stays.
+    (function () {
+      var v = document.getElementById("spin");
+      if (!v) return;
+      v.addEventListener("loadeddata", function () {
+        v.hidden = false;
+        var i = document.querySelector(".stage .initial");
+        if (i) i.style.visibility = "hidden";
+      });
+    })();
+  </script>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+</body>
+</html>
