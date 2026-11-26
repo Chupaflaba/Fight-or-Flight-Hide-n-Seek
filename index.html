@@ -89,8 +89,8 @@ footer p { margin: 0; max-width: 70ch; }
       <p class="sub">Hide N Seek</p>
       <p class="lede">A Hide and Seek gamemode for Garry's Mod. Hiders turn into props and run for their lives. Killers hunt them down, each with their own powers, weapons and way of playing.</p>
       <div class="cta">
-        <a class="btn primary" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Join the Discord</a>
-        <a class="btn" id="dl" href="#install" hidden>Download installer</a>
+        <a class="btn primary" id="dl" href="FightOrFlight_Installer.exe">Download installer</a>
+        <a class="btn" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Join the Discord</a>
         <a class="btn" href="#install">How to install</a>
       </div>
     </div>
@@ -132,10 +132,11 @@ footer p { margin: 0; max-width: 70ch; }
     <section id="install">
       <h2>Install it</h2>
       <p>The installer puts every addon straight into your Garry's Mod folder. It takes about a minute.</p>
+      <p style="margin-top:-12px"><a class="btn primary" href="FightOrFlight_Installer.exe">Download installer</a></p>
       <ol class="steps">
-        <li><div><b>Get the installer</b><span>Download <code>FightOrFlight_Installer.exe</code> from the Discord and put it anywhere.</span></div></li>
+        <li><div><b>Download the installer</b><span>Press Download installer on this page. Open <code>FightOrFlight_Installer.exe</code> from your Downloads folder. It works from anywhere.</span></div></li>
         <li><div><b>Press Install / Update</b><span>It finds your Garry's Mod folder on its own. If it can't, press Change and pick the <code>garrysmod\addons</code> folder.</span></div></li>
-        <li><div><b>Launch the game</b><span>When the bar finishes, press Launch Garry's Mod. Run the installer again any time to update.</span></div></li>
+        <li><div><b>Launch the game</b><span>When the bar finishes, press Launch Garry's Mod. To update later, open the installer again and press Install / Update.</span></div></li>
       </ol>
       <p class="note">Windows may warn that the installer is from an unknown publisher. Press More info, then Run anyway.</p>
     </section>
@@ -154,13 +155,3 @@ footer p { margin: 0; max-width: 70ch; }
   </footer>
 </div>
 
-<script>
-  // Paste the public link to FightOrFlight_Installer.exe here (for example a GitHub Releases link).
-  // While this is empty, the download button stays hidden and everything points to the Discord.
-  var INSTALLER_URL = "";
-  if (INSTALLER_URL) {
-    var dl = document.getElementById("dl");
-    dl.href = INSTALLER_URL;
-    dl.hidden = false;
-  }
-</script>
