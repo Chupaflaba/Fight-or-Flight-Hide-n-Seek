@@ -1,0 +1,166 @@
+<title>Fight or Flight : Hide N Seek</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one dark column. Huge condensed wordmark, roster of killers as a plain grid, three real install steps, one Discord call to action. */
+:root {
+  --bg: #120f0f;
+  --panel: #221c1c;
+  --panel-hot: #322929;
+  --line: #423636;
+  --red: #8c1414;
+  --red-hot: #b41e1e;
+  --accent: #f05a5a;
+  --text: #ebebeb;
+  --muted: #a39a9a;
+  --display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 0;
+}
+a { color: inherit; }
+.wrap { max-width: 980px; margin: 0 auto; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 20px; }
+.mark { font: 800 1.15rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase; }
+.mark span { color: var(--accent); }
+.top a.link { font-size: .9rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+.top a.link:hover { color: var(--text); border-color: var(--accent); }
+
+.hero { padding-block: 56px 64px; border-top: 1px solid var(--line); }
+.hero h1 { margin: 0; font: 900 clamp(3.4rem, 15vw, 9.5rem)/.86 var(--display); text-transform: uppercase; letter-spacing: -.01em; text-wrap: balance; }
+.hero h1 .or { color: var(--accent); }
+.hero .sub { margin: 18px 0 0; font: 700 clamp(1.3rem, 4.5vw, 2.1rem)/1 var(--display); letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+.hero p.lede { max-width: 56ch; margin: 28px 0 0; font-size: 1.1rem; color: #cfc8c8; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border-radius: 4px; font: 600 .95rem/1 var(--body); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--line); background: var(--panel); transition: background .15s, border-color .15s; }
+.btn:hover { background: var(--panel-hot); border-color: var(--accent); }
+.btn.primary { background: var(--red); border-color: var(--red-hot); }
+.btn.primary:hover { background: var(--red-hot); }
+
+section { padding-block: 56px; border-top: 1px solid var(--line); }
+h2 { margin: 0 0 8px; font: 800 clamp(1.9rem, 6vw, 2.8rem)/1 var(--display); text-transform: uppercase; letter-spacing: .02em; }
+h2 + p { margin: 0 0 28px; max-width: 58ch; color: var(--muted); }
+
+.roster { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.roster li { min-width: 0; padding: 16px 16px 15px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; font: 700 1.25rem/1.1 var(--display); letter-spacing: .06em; text-transform: uppercase; overflow-wrap: anywhere; transition: border-color .15s, background .15s; }
+.roster li:hover { background: var(--panel-hot); border-color: var(--red-hot); }
+
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; counter-reset: step; }
+.steps li { counter-increment: step; display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: start; padding: 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
+.steps li::before { content: counter(step); font: 900 2.6rem/.9 var(--display); color: var(--accent); }
+.steps b { display: block; margin-bottom: 2px; font: 700 1.3rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; }
+.steps span { color: var(--muted); }
+.note { margin: 20px 0 0; font-size: .9rem; color: var(--muted); max-width: 64ch; }
+
+.join { text-align: left; }
+footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+footer p { margin: 0; max-width: 70ch; }
+
+@media (max-width: 520px) {
+  .steps li { grid-template-columns: 40px 1fr; padding: 16px; }
+  .btn { width: 100%; justify-content: center; }
+  .roster { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .roster li { font-size: 1.05rem; padding: 14px 12px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="mark">Fight or Flight <span>:</span> Hide N Seek</div>
+    <a class="link" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Discord</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Fight <span class="or">or</span> Flight</h1>
+      <p class="sub">Hide N Seek</p>
+      <p class="lede">A Hide and Seek gamemode for Garry's Mod. Hiders turn into props and run for their lives. Killers hunt them down, each with their own powers, weapons and way of playing.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Join the Discord</a>
+        <a class="btn" id="dl" href="#install" hidden>Download installer</a>
+        <a class="btn" href="#install">How to install</a>
+      </div>
+    </div>
+
+    <section id="killers">
+      <h2>The killers</h2>
+      <p><!--COUNT-->25<!--/COUNT--> killers to choose from, each one playing differently.</p>
+      <ul class="roster">
+        <!--ROSTER-->
+        <li>Agatha</li>
+        <li>Doodlebob</li>
+        <li>Hellborn</li>
+        <li>Hello Neighbor</li>
+        <li>Herobrine</li>
+        <li>Huntsman Spider</li>
+        <li>Kolossos</li>
+        <li>Locust</li>
+        <li>Nosey</li>
+        <li>Obelisk</li>
+        <li>Omnidroid</li>
+        <li>Phantom Bonnie</li>
+        <li>Phantom Chica</li>
+        <li>Phantom Foxy</li>
+        <li>Phantom Freddy</li>
+        <li>Phantom Mangle</li>
+        <li>Phantom Puppet</li>
+        <li>Plushtrap</li>
+        <li>Redrawn Bendy</li>
+        <li>Retro Springtrap</li>
+        <li>Rolling Giant</li>
+        <li>Slenderman</li>
+        <li>Stalker</li>
+        <li>Warden</li>
+        <li>Wyst</li>
+        <!--/ROSTER-->
+      </ul>
+    </section>
+
+    <section id="install">
+      <h2>Install it</h2>
+      <p>The installer puts every addon straight into your Garry's Mod folder. It takes about a minute.</p>
+      <ol class="steps">
+        <li><div><b>Get the installer</b><span>Download <code>FightOrFlight_Installer.exe</code> from the Discord and put it anywhere.</span></div></li>
+        <li><div><b>Press Install / Update</b><span>It finds your Garry's Mod folder on its own. If it can't, press Change and pick the <code>garrysmod\addons</code> folder.</span></div></li>
+        <li><div><b>Launch the game</b><span>When the bar finishes, press Launch Garry's Mod. Run the installer again any time to update.</span></div></li>
+      </ol>
+      <p class="note">Windows may warn that the installer is from an unknown publisher. Press More info, then Run anyway.</p>
+    </section>
+
+    <section class="join" id="discord">
+      <h2>Come play</h2>
+      <p>Updates, matches and bug reports all happen on the Discord.</p>
+      <div class="cta" style="margin-top:0">
+        <a class="btn primary" href="https://discord.gg/nKmsM5a2TQ" target="_blank" rel="noopener">Join the Discord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Fight or Flight : Hide N Seek is a fan-made gamemode for Garry's Mod. Killer names belong to their respective owners and are used here only to describe the content.</p>
+  </footer>
+</div>
+
+<script>
+  // Paste the public link to FightOrFlight_Installer.exe here (for example a GitHub Releases link).
+  // While this is empty, the download button stays hidden and everything points to the Discord.
+  var INSTALLER_URL = "";
+  if (INSTALLER_URL) {
+    var dl = document.getElementById("dl");
+    dl.href = INSTALLER_URL;
+    dl.hidden = false;
+  }
+</script>
