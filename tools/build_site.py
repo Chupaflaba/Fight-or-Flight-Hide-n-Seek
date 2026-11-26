@@ -140,12 +140,11 @@ footer p { margin: 0; max-width: 70ch; }
 /* killer page */
 .crumb { display: inline-block; margin-bottom: 20px; font-size: .9rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
 .crumb:hover { color: var(--text); border-color: var(--accent); }
-.k { display: block; padding-block: 24px 56px; }
-.stage { position: relative; width: 100%; aspect-ratio: 1020 / 450; margin-bottom: 36px; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: grid; place-items: center; }
-.stage .initial { font: 900 clamp(5rem, 22vw, 12rem)/1 var(--display); color: var(--panel-hot); user-select: none; }
-.kcols { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 36px; align-items: start; }
-.kcols h2.abil { margin-top: 0; }
-.stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.k { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 32px; padding-block: 40px 56px; border-top: 1px solid var(--line); align-items: start; }
+.stage { position: sticky; top: 16px; aspect-ratio: 1 / 1; background: var(--bg); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: grid; place-items: center;
+  background-image: radial-gradient(ellipse at 50% 85%, #3a1212 0%, #1a1212 45%, #120f0f 75%); }
+.stage .initial { font: 900 clamp(8rem, 28vw, 15rem)/1 var(--display); color: var(--panel-hot); user-select: none; }
+.stage video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .stage video[hidden] { display: none; }
 .k h1 { margin: 0; font: 900 clamp(2.6rem, 9vw, 4.6rem)/.92 var(--display); text-transform: uppercase; letter-spacing: .01em; overflow-wrap: anywhere; }
 .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: 12px; }
@@ -157,7 +156,7 @@ footer p { margin: 0; max-width: 70ch; }
 .stats li { padding: 10px 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
 .stats span { display: block; font: 600 .66rem/1 var(--body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .stats b { display: block; margin-top: 4px; font: 800 1.5rem/1 var(--display); letter-spacing: .04em; color: var(--stat); }
-.k h2.abil { margin: 0 0 12px; font-size: 1.6rem; }
+.k h2.abil { margin: 36px 0 12px; font-size: 1.6rem; }
 .abilities { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .abilities li { padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; }
 .abilities .an { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font: 700 1.3rem/1.1 var(--display); letter-spacing: .05em; text-transform: uppercase; color: var(--ability); }
@@ -174,7 +173,8 @@ footer p { margin: 0; max-width: 70ch; }
 .pager .next { text-align: right; margin-left: auto; }
 
 @media (max-width: 760px) {
-  .kcols { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .k { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .stage { position: relative; top: 0; aspect-ratio: 1 / 1; }
 }
 @media (max-width: 520px) {
   .steps li { grid-template-columns: 40px 1fr; padding: 16px; }
@@ -330,20 +330,16 @@ def build(menu_path, out):
           <source src="../models/{s}.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="kcols">
-        <div>
-          <h1>{esc(n)}</h1>
-          <div class="meta">{role_tag(roles.get(n))}{stars}</div>
-          {f'<p class="tagline">{esc(clean(tagline))}</p>' if tagline else ""}
-          <ul class="stats">{stats}</ul>
-          {f'<div class="over">{overview}</div>' if overview else ""}
-        </div>
-        <div>
-          <h2 class="abil">Abilities</h2>
-          <ul class="abilities">
-            {chr(10).join("            " + x for x in items).strip()}
-          </ul>
-        </div>
+      <div>
+        <h1>{esc(n)}</h1>
+        <div class="meta">{role_tag(roles.get(n))}{stars}</div>
+        {f'<p class="tagline">{esc(clean(tagline))}</p>' if tagline else ""}
+        <ul class="stats">{stats}</ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          {chr(10).join("          " + x for x in items).strip()}
+        </ul>
+        {f'<div class="over">{overview}</div>' if overview else ""}
       </div>
     </article>
     {pager}
@@ -353,11 +349,14 @@ def build(menu_path, out):
     (function () {{
       var v = document.getElementById("spin");
       if (!v) return;
-      v.addEventListener("loadeddata", function () {{
+      function show() {{
         v.hidden = false;
         var i = document.querySelector(".stage .initial");
         if (i) i.style.visibility = "hidden";
-      }});
+        var p = v.play(); if (p && p.catch) p.catch(function () {{}});
+      }}
+      v.addEventListener("loadeddata", show);
+      if (v.readyState >= 2) show();
     }})();
   </script>
 """

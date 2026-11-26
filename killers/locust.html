@@ -31,22 +31,18 @@
           <source src="../models/locust.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="kcols">
-        <div>
-          <h1>Locust</h1>
-          <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 2 of 5" aria-label="Difficulty 2 of 5"><b>★★</b>★★★<small>Difficulty</small></span></div>
-          <p class="tagline">The whole map is watching.</p>
-          <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>552</b></li></ul>
-          <div class="over"><p>A surveillance-based Killer who turns the map into a network of eyes. Deploy TV allows Locust to place up to seven TVs that he can see through, highlighting any players caught within their view. With Televisional Pursuit, Locust can travel through any of his deployed TVs, allowing him to quickly reposition and hunt down detected Hiders. Channel Chaos deploys a larger TV that slows players caught within its radius, giving Locust greater control over key areas.</p><p>A strategic Killer built around surveillance, rapid repositioning, and map control.</p></div>
-        </div>
-        <div>
-          <h2 class="abil">Abilities</h2>
-          <ul class="abilities">
-            <li><div class="an">Deploy TV<span class="key">1</span></div><p>Deploys up to 7 TVs that Locust can see through. TVs highlight any players detected within their view.</p></li>
-            <li><div class="an">Televisional Pursuit<span class="key">2</span></div><p>Locust travels through any of his previously deployed TV&#x27;s.</p></li>
-            <li><div class="an">Channel Chaos<span class="key">3</span></div><p>Deploys a larger TV that slows players within its radius. Only one can be active at a time.</p></li>
-          </ul>
-        </div>
+      <div>
+        <h1>Locust</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 2 of 5" aria-label="Difficulty 2 of 5"><b>★★</b>★★★<small>Difficulty</small></span></div>
+        <p class="tagline">The whole map is watching.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>552</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Deploy TV<span class="key">1</span></div><p>Deploys up to 7 TVs that Locust can see through. TVs highlight any players detected within their view.</p></li>
+          <li><div class="an">Televisional Pursuit<span class="key">2</span></div><p>Locust travels through any of his previously deployed TV&#x27;s.</p></li>
+          <li><div class="an">Channel Chaos<span class="key">3</span></div><p>Deploys a larger TV that slows players within its radius. Only one can be active at a time.</p></li>
+        </ul>
+        <div class="over"><p>A surveillance-based Killer who turns the map into a network of eyes. Deploy TV allows Locust to place up to seven TVs that he can see through, highlighting any players caught within their view. With Televisional Pursuit, Locust can travel through any of his deployed TVs, allowing him to quickly reposition and hunt down detected Hiders. Channel Chaos deploys a larger TV that slows players caught within its radius, giving Locust greater control over key areas.</p><p>A strategic Killer built around surveillance, rapid repositioning, and map control.</p></div>
       </div>
     </article>
     <nav class="pager" aria-label="More killers"><a href="kolossos.html"><small>Previous</small><b>Kolossos</b></a><a class="next" href="nosey.html"><small>Next</small><b>Nosey</b></a></nav>
@@ -56,11 +52,14 @@
     (function () {
       var v = document.getElementById("spin");
       if (!v) return;
-      v.addEventListener("loadeddata", function () {
+      function show() {
         v.hidden = false;
         var i = document.querySelector(".stage .initial");
         if (i) i.style.visibility = "hidden";
-      });
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      v.addEventListener("loadeddata", show);
+      if (v.readyState >= 2) show();
     })();
   </script>
 

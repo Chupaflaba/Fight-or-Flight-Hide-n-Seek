@@ -31,24 +31,20 @@
           <source src="../models/obelisk.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="kcols">
-        <div>
-          <h1>Obelisk</h1>
-          <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 5 of 5" aria-label="Difficulty 5 of 5"><b>★★★★★</b><small>Difficulty</small></span></div>
-          <p class="tagline">Darkness is the only thing you can trust.</p>
-          <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>1060</b></li></ul>
-          <div class="over"><p>A supernatural Killer who controls the battlefield through darkness and sudden bursts of movement. Night Vision grants Obelisk enhanced vision for 12 seconds and can be toggled off to conserve its charge. Use Shadow Wall to raise a silent barrier that cuts off paths and traps Hiders, or place a Shadow Anchor to instantly warp back to its location. Cursed Eyes temporarily blinds every Hider across the map, creating openings to strike, while Surge lets Obelisk burst forward with a sudden increase of speed.</p><p>A versatile Killer built around timing, positioning, and controlling the Hiders&#x27; escape routes.</p></div>
-        </div>
-        <div>
-          <h2 class="abil">Abilities</h2>
-          <ul class="abilities">
-            <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Obelisk night vision for 12 seconds. Able to be toggled on and off to recharge.</p></li>
-            <li><div class="an">Shadow Wall<span class="key">G</span></div><p>Raises a silent barrier of darkness, cutting off paths and trapping Hiders. Disappears after a while.</p></li>
-            <li><div class="an">Shadow Anchor<span class="key">T</span></div><p>Leaves behind a shadow clone that Obelisk can instantly warp back to.</p></li>
-            <li><div class="an">Cursed Eyes<span class="key">R</span></div><p>Curses the eyes of every Hider, blinding them for a short duration.</p></li>
-            <li><div class="an">Surge<span class="key">SHIFT</span></div><p>Bursts forward with a sudden surge of speed.</p></li>
-          </ul>
-        </div>
+      <div>
+        <h1>Obelisk</h1>
+        <div class="meta"><span class="tag executioner">Executioner</span><span class="stars" title="Difficulty 5 of 5" aria-label="Difficulty 5 of 5"><b>★★★★★</b><small>Difficulty</small></span></div>
+        <p class="tagline">Darkness is the only thing you can trust.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>1060</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Night Vision<span class="key">F</span></div><p>Grants Obelisk night vision for 12 seconds. Able to be toggled on and off to recharge.</p></li>
+          <li><div class="an">Shadow Wall<span class="key">G</span></div><p>Raises a silent barrier of darkness, cutting off paths and trapping Hiders. Disappears after a while.</p></li>
+          <li><div class="an">Shadow Anchor<span class="key">T</span></div><p>Leaves behind a shadow clone that Obelisk can instantly warp back to.</p></li>
+          <li><div class="an">Cursed Eyes<span class="key">R</span></div><p>Curses the eyes of every Hider, blinding them for a short duration.</p></li>
+          <li><div class="an">Surge<span class="key">SHIFT</span></div><p>Bursts forward with a sudden surge of speed.</p></li>
+        </ul>
+        <div class="over"><p>A supernatural Killer who controls the battlefield through darkness and sudden bursts of movement. Night Vision grants Obelisk enhanced vision for 12 seconds and can be toggled off to conserve its charge. Use Shadow Wall to raise a silent barrier that cuts off paths and traps Hiders, or place a Shadow Anchor to instantly warp back to its location. Cursed Eyes temporarily blinds every Hider across the map, creating openings to strike, while Surge lets Obelisk burst forward with a sudden increase of speed.</p><p>A versatile Killer built around timing, positioning, and controlling the Hiders&#x27; escape routes.</p></div>
       </div>
     </article>
     <nav class="pager" aria-label="More killers"><a href="nosey.html"><small>Previous</small><b>Nosey</b></a><a class="next" href="omnidroid.html"><small>Next</small><b>The Omnidroid</b></a></nav>
@@ -58,11 +54,14 @@
     (function () {
       var v = document.getElementById("spin");
       if (!v) return;
-      v.addEventListener("loadeddata", function () {
+      function show() {
         v.hidden = false;
         var i = document.querySelector(".stage .initial");
         if (i) i.style.visibility = "hidden";
-      });
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      v.addEventListener("loadeddata", show);
+      if (v.readyState >= 2) show();
     })();
   </script>
 

@@ -31,23 +31,19 @@
           <source src="../models/herobrine.mp4" type="video/mp4">
         </video>
       </div>
-      <div class="kcols">
-        <div>
-          <h1>Herobrine</h1>
-          <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 1 of 5" aria-label="Difficulty 1 of 5"><b>★</b>★★★★<small>Difficulty</small></span></div>
-          <p class="tagline">He is always watching.</p>
-          <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>600</b></li></ul>
-          <div class="over"><p>A mysterious entity that bends reality itself, Ominous Presence allows Herobrine to become stationary and sense the auras of Hiders across the map. With Noclip Shift, he can phase through reality and reappear at any location he chooses. Cursed TNT lets him throw an explosive block that detonates after a brief delay, damaging nearby Hiders. Meanwhile, Herobrine&#x27;s Watchers silently roam the map, and any Hider who looks directly at one will have their vision darkened.</p><p>A supernatural Killer built around omnipresence, map control, and psychological pressure.</p></div>
-        </div>
-        <div>
-          <h2 class="abil">Abilities</h2>
-          <ul class="abilities">
-            <li><div class="an">Ominous Presence<span class="key">RMB</span></div><p>Herobrine becomes stationary and focuses on the auras of players throughout the map, allowing him to sense their locations from afar.</p></li>
-            <li><div class="an">Noclip Shift<span class="key">R</span></div><p>Herobrine noclips through reality, allowing him to freely choose a location to reappear anywhere on the map.</p></li>
-            <li><div class="an">Cursed TNT<span class="key">G</span></div><p>Throw a cursed block of TNT toward the area you&#x27;re looking. After a brief delay, it detonates, damaging nearby Hiders.</p></li>
-            <li><div class="an">Herobrine&#x27;s Watchers<span class="key passive">Passive</span></div><p>Herobrine duplicates spawn throughout the map, silently watching Hiders. Looking directly at a duplicate darkens the player&#x27;s vision, making it harder to see.</p></li>
-          </ul>
-        </div>
+      <div>
+        <h1>Herobrine</h1>
+        <div class="meta"><span class="tag pursuer">Pursuer</span><span class="stars" title="Difficulty 1 of 5" aria-label="Difficulty 1 of 5"><b>★</b>★★★★<small>Difficulty</small></span></div>
+        <p class="tagline">He is always watching.</p>
+        <ul class="stats"><li><span>Health</span><b>500 / Hider</b></li><li><span>Speed</span><b>600</b></li></ul>
+        <h2 class="abil">Abilities</h2>
+        <ul class="abilities">
+          <li><div class="an">Ominous Presence<span class="key">RMB</span></div><p>Herobrine becomes stationary and focuses on the auras of players throughout the map, allowing him to sense their locations from afar.</p></li>
+          <li><div class="an">Noclip Shift<span class="key">R</span></div><p>Herobrine noclips through reality, allowing him to freely choose a location to reappear anywhere on the map.</p></li>
+          <li><div class="an">Cursed TNT<span class="key">G</span></div><p>Throw a cursed block of TNT toward the area you&#x27;re looking. After a brief delay, it detonates, damaging nearby Hiders.</p></li>
+          <li><div class="an">Herobrine&#x27;s Watchers<span class="key passive">Passive</span></div><p>Herobrine duplicates spawn throughout the map, silently watching Hiders. Looking directly at a duplicate darkens the player&#x27;s vision, making it harder to see.</p></li>
+        </ul>
+        <div class="over"><p>A mysterious entity that bends reality itself, Ominous Presence allows Herobrine to become stationary and sense the auras of Hiders across the map. With Noclip Shift, he can phase through reality and reappear at any location he chooses. Cursed TNT lets him throw an explosive block that detonates after a brief delay, damaging nearby Hiders. Meanwhile, Herobrine&#x27;s Watchers silently roam the map, and any Hider who looks directly at one will have their vision darkened.</p><p>A supernatural Killer built around omnipresence, map control, and psychological pressure.</p></div>
       </div>
     </article>
     <nav class="pager" aria-label="More killers"><a href="hello-neighbor.html"><small>Previous</small><b>Hello Neighbor</b></a><a class="next" href="huntsman-spider.html"><small>Next</small><b>Huntsman Spider</b></a></nav>
@@ -57,11 +53,14 @@
     (function () {
       var v = document.getElementById("spin");
       if (!v) return;
-      v.addEventListener("loadeddata", function () {
+      function show() {
         v.hidden = false;
         var i = document.querySelector(".stage .initial");
         if (i) i.style.visibility = "hidden";
-      });
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+      }
+      v.addEventListener("loadeddata", show);
+      if (v.readyState >= 2) show();
     })();
   </script>
 
