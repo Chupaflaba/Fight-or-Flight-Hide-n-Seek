@@ -13,8 +13,8 @@ from lupa import LuaRuntime
 DISCORD = "https://discord.gg/nKmsM5a2TQ"
 INSTALLER = "FightOrFlight_Installer.exe"
 SITE_NAME = "Fight or Flight : Hide N Seek"
-LEDE = ("A Hide and Seek gamemode for Garry's Mod. Hiders turn into props and run for their lives. "
-        "Killers hunt them down, each with their own powers, weapons and way of playing.")
+LEDE = ("Fight or Flight : Hide n Seek is a game mode that adds various mechanics to the standard Gmod Hide n Seek experience! "
+        "Most notable are the classes for hiders, killer rebalancing, various movement mechanics, and balancing of the game mode overall.")
 
 
 def grab(src, name):
