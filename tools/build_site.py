@@ -10,6 +10,7 @@ named models/<slug>.webm (and .mp4) inside the output folder; a killer without o
 import html, os, re, sys
 from lupa import LuaRuntime
 
+REPO = "https://github.com/Chupaflaba/Fight-or-Flight-Hide-n-Seek"
 DISCORD = "https://discord.gg/nKmsM5a2TQ"
 INSTALLER = "FightOrFlight_Installer.exe"
 SITE_NAME = "Fight or Flight : Hide N Seek"
@@ -317,7 +318,8 @@ def build(menu_path, out):
         <li><b>Everyone on the same version</b>Every player gets the same versions of every addon, so nothing breaks because of an older or different copy.</li>
         <li><b>Small, fast updates</b>After the first install it only downloads the addons that changed, so most updates take seconds.</li>
         <li><b>Updates the moment they're out</b>New killers and fixes reach you as soon as they're released, with no waiting on a review.</li>
-        <li><b>Safe and simple</b>It only downloads from this project's GitHub release and only writes into your <code>garrysmod\\addons</code> folder. The source is on GitHub if you want to check.</li>
+        <li><b>Safe and simple</b>It only downloads from this project's <a href="{REPO}/releases/tag/mods" target="_blank" rel="noopener">GitHub release</a> and only writes into your <code>garrysmod\\addons</code> folder. The installer's <a href="{REPO}/tree/main/tools/installer" target="_blank" rel="noopener">source code</a> is on GitHub if you want to check.</li>
+        <li><b>Prefer to install by hand?</b>Every addon is a separate zip on the <a href="{REPO}/releases/tag/mods" target="_blank" rel="noopener">GitHub release page</a>. Download the ones you want and unzip each into its own folder inside <code>garrysmod\\addons</code>, named after the zip (for example <code>core_HNS.zip</code> goes in <code>addons\\core_HNS</code>).</li>
       </ul>
       <div class="cta" style="margin-top:28px">
         <a class="btn primary" href="{INSTALLER}">Download installer</a>
