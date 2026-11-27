@@ -72,6 +72,12 @@ h2 + p { margin: 0 0 28px; max-width: 58ch; color: var(--muted); }
 .steps b { display: block; margin-bottom: 2px; font: 700 1.3rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; }
 .steps span { color: var(--muted); }
 .note { margin: 20px 0 0; font-size: .9rem; color: var(--muted); max-width: 64ch; }
+.whylink { margin: 14px 0 0; font-size: .9rem; color: var(--muted); }
+.whylink a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.whylink a:hover { border-color: var(--accent); }
+.why { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.why li { padding: 16px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
+.why b { display: block; margin-bottom: 2px; font: 700 1.2rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; color: var(--text); }
 
 footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
 footer p { margin: 0; max-width: 70ch; }

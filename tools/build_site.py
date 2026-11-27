@@ -133,6 +133,12 @@ h2 + p { margin: 0 0 28px; max-width: 58ch; color: var(--muted); }
 .steps b { display: block; margin-bottom: 2px; font: 700 1.3rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; }
 .steps span { color: var(--muted); }
 .note { margin: 20px 0 0; font-size: .9rem; color: var(--muted); max-width: 64ch; }
+.whylink { margin: 14px 0 0; font-size: .9rem; color: var(--muted); }
+.whylink a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.whylink a:hover { border-color: var(--accent); }
+.why { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.why li { padding: 16px 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; color: var(--muted); }
+.why b { display: block; margin-bottom: 2px; font: 700 1.2rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; color: var(--text); }
 
 footer { padding-block: 32px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
 footer p { margin: 0; max-width: 70ch; }
@@ -256,6 +262,7 @@ def build(menu_path, out):
         <a class="btn" href="{DISCORD}" target="_blank" rel="noopener">Join the Discord</a>
         <a class="btn" href="#install">How to install</a>
       </div>
+      <p class="whylink">Wondering why there's an installer? <a href="#why">Here's why</a>.</p>
     </div>
 
     <section id="killers">
@@ -276,6 +283,19 @@ def build(menu_path, out):
       </ol>
       <div class="cta"><a class="btn primary" href="{INSTALLER}">Download installer</a></div>
       <p class="note">Windows may warn that the installer is from an unknown publisher. Press More info, then Run anyway.</p>
+      <p class="whylink"><a href="#why">Why use an installer?</a></p>
+    </section>
+
+    <section id="why">
+      <h2>Why an installer?</h2>
+      <p>The gamemode is built from custom and modified addons that don't all fit on the Steam Workshop. The installer sets all of it up for you.</p>
+      <ul class="why">
+        <li><b>One click, everything</b>No subscribing to dozens of separate addons and hoping you got them all.</li>
+        <li><b>Everyone on the same version</b>Every player gets the same versions of every addon, so nothing breaks because of an older or different copy.</li>
+        <li><b>Small, fast updates</b>After the first install it only downloads the addons that changed, so most updates take seconds.</li>
+        <li><b>Updates the moment they're out</b>New killers and fixes reach you as soon as they're released, with no waiting on a review.</li>
+        <li><b>Safe and simple</b>It only downloads from this project's GitHub release and only writes into your <code>garrysmod\addons</code> folder. The source is on GitHub if you want to check.</li>
+      </ul>
     </section>
 
     <section id="discord">
