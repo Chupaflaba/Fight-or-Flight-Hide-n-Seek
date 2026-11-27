@@ -133,6 +133,11 @@ h2 + p { margin: 0 0 28px; max-width: 58ch; color: var(--muted); }
 .steps b { display: block; margin-bottom: 2px; font: 700 1.3rem/1.15 var(--display); letter-spacing: .05em; text-transform: uppercase; }
 .steps span { color: var(--muted); }
 .note { margin: 20px 0 0; font-size: .9rem; color: var(--muted); max-width: 64ch; }
+.pagehead { padding-block: 40px 8px; }
+.pagehead h1 { margin: 0 0 12px; font: 900 clamp(2.6rem, 9vw, 5rem)/.9 var(--display); text-transform: uppercase; letter-spacing: -.01em; }
+.pagehead p { margin: 0; max-width: 60ch; color: #cfc8c8; font-size: 1.05rem; }
+.backlink { display: inline-block; margin-top: 8px; font-size: .9rem; color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
+.backlink:hover { color: var(--text); border-color: var(--accent); }
 .whylink { margin: 14px 0 0; font-size: .9rem; color: var(--muted); }
 .whylink a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 1px; }
 .whylink a:hover { border-color: var(--accent); }
@@ -262,7 +267,7 @@ def build(menu_path, out):
         <a class="btn" href="{DISCORD}" target="_blank" rel="noopener">Join the Discord</a>
         <a class="btn" href="#install">How to install</a>
       </div>
-      <p class="whylink">Wondering why there's an installer? <a href="#why">Here's why</a>.</p>
+      <p class="whylink">Wondering why there's an installer? <a href="why.html">Here's why</a>.</p>
     </div>
 
     <section id="killers">
@@ -283,19 +288,7 @@ def build(menu_path, out):
       </ol>
       <div class="cta"><a class="btn primary" href="{INSTALLER}">Download installer</a></div>
       <p class="note">Windows may warn that the installer is from an unknown publisher. Press More info, then Run anyway.</p>
-      <p class="whylink"><a href="#why">Why use an installer?</a></p>
-    </section>
-
-    <section id="why">
-      <h2>Why an installer?</h2>
-      <p>The gamemode is built from custom and modified addons that don't all fit on the Steam Workshop. The installer sets all of it up for you.</p>
-      <ul class="why">
-        <li><b>One click, everything</b>No subscribing to dozens of separate addons and hoping you got them all.</li>
-        <li><b>Everyone on the same version</b>Every player gets the same versions of every addon, so nothing breaks because of an older or different copy.</li>
-        <li><b>Small, fast updates</b>After the first install it only downloads the addons that changed, so most updates take seconds.</li>
-        <li><b>Updates the moment they're out</b>New killers and fixes reach you as soon as they're released, with no waiting on a review.</li>
-        <li><b>Safe and simple</b>It only downloads from this project's GitHub release and only writes into your <code>garrysmod\addons</code> folder. The source is on GitHub if you want to check.</li>
-      </ul>
+      <p class="whylink"><a href="why.html">Why use an installer?</a></p>
     </section>
 
     <section id="discord">
@@ -306,6 +299,34 @@ def build(menu_path, out):
   </main>
 """ + foot()
     open(os.path.join(out, "index.html"), "w", encoding="utf-8").write(index)
+
+    # ---------------- why page
+    why = head("Why an installer? - " + SITE_NAME,
+               "Why Fight or Flight : Hide N Seek uses an installer instead of Steam Workshop addons.", CSS, "") + f"""
+  <main>
+    <div class="pagehead">
+      <a class="backlink" href="index.html">&larr; Back</a>
+      <h1>Why an installer?</h1>
+      <p>Most Garry's Mod content comes from the Steam Workshop. This gamemode doesn't, and here's why.</p>
+    </div>
+
+    <section>
+      <ul class="why">
+        <li><b>Some addons can't go on the Workshop</b>The gamemode includes modified versions of other people's addons and content. The Workshop only accepts content you made or have permission to upload, and reuploads risk being taken down. An installer lets all of it still be shared in one place.</li>
+        <li><b>One click, everything</b>No subscribing to dozens of separate addons and hoping you got them all.</li>
+        <li><b>Everyone on the same version</b>Every player gets the same versions of every addon, so nothing breaks because of an older or different copy.</li>
+        <li><b>Small, fast updates</b>After the first install it only downloads the addons that changed, so most updates take seconds.</li>
+        <li><b>Updates the moment they're out</b>New killers and fixes reach you as soon as they're released, with no waiting on a review.</li>
+        <li><b>Safe and simple</b>It only downloads from this project's GitHub release and only writes into your <code>garrysmod\\addons</code> folder. The source is on GitHub if you want to check.</li>
+      </ul>
+      <div class="cta" style="margin-top:28px">
+        <a class="btn primary" href="{INSTALLER}">Download installer</a>
+        <a class="btn" href="index.html#install">How to install</a>
+      </div>
+    </section>
+  </main>
+""" + foot()
+    open(os.path.join(out, "why.html"), "w", encoding="utf-8").write(why)
 
     # ---------------- killer pages
     for i, n in enumerate(names):
